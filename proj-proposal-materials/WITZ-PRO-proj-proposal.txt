@@ -1,0 +1,43 @@
+ERD URL: https://dbdiagram.io/d/6282d9ca7f945876b62d5506
+
+USER STORIES: 
+GIVEN that a user has login credentials
+WHEN they enter those credentials
+THEN they are taken to a projects page
+
+GIVEN that a user is on the projects page
+WHEN the user clicks the "+" icon
+THEN they are prompted to create a new project, with a name and Date range (ie July 3, 2022 - Aug 14, 2022)
+
+GIVEN that a user has created a project
+WHEN the user selects that project
+THEN they are brought to the main Route of the application.
+
+GIVEN that the user is on the main Route of their project
+WHEN they click "ADD CREW MEMBER"
+THEN they are brought to a crew member creation form. 
+
+GIVEN that the user is at the crew creation form
+WHEN they enter credentials/details about a crew member and click save
+THEN the crew member is added to a Crew Repo
+
+GIVEN that the user is on the main Route of their project
+WHEN they click a crew member currently in their Crew Repo
+THEN that crew member is added to the currently toggled date. 
+
+GIVEN that the user is on the main Route of their project
+WHEN they click the date toggle buttons
+THEN the user is shown the various project dates, and the on-call crew members therein. 
+
+GIVEN that the user has added some crew to some day/days
+THEN the budget meters should show the current tallied cost of production.
+
+
+MVP:
+User will be able to log in and select a project, or create a new project. Within each project, user will be able to create a Crew member, which is permanently stored in the list of Crew Members. User will be able to toggle Crew Members on and off accross any calendar date in their project. As the user toggles-on Crew members for each given day, the global project Budget will tally, as will the more granular Daily total. 
+
+STRETCH: 
+A weather API that gives a basic forecast for each project day.
+
+A Calendar view that shows multiple months at once, with each date (where there is any crew on set) highlighted. 
+
