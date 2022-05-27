@@ -1,0 +1,32 @@
+{
+  "crew": [
+    {
+      "id": 1,
+      "name": "Marc",
+      "role": "AD",
+      "dayRate": 200,
+      "onCall": false
+    },
+    {
+      "name": "Johbn",
+      "role": "Director",
+      "dayRate": "6984981",
+      "id": 2,
+      "onCall": false
+    },
+    {
+      "name": "April",
+      "role": "HBIC",
+      "dayRate": "678",
+      "id": 3,
+      "onCall": false
+    },
+    {
+      "name": "Jason",
+      "role": "Producer",
+      "dayRate": "2500",
+      "onCall": false,
+      "id": 4
+    }
+  ]
+}
