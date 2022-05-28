@@ -14,8 +14,7 @@ export const CrewForm = ({addCrew}) => {
     }
 
     return (
-            <Grid item xs={2}>
-                <Paper>Add a New Crew Member:</Paper>
+            <Grid item container xs={2}>
                 <Paper>Name:</Paper>
                 <TextField variant="outlined" onChange={(e) => setName(e.target.value)}></TextField>
                 <Paper>Role:</Paper>

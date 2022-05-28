@@ -5,6 +5,7 @@ import { CrewRepo } from './CrewRepo';
 import { OnCall } from './OnCall';
 import { Grid } from '@mui/material';
 import { getCrewMembers, addCrewMember } from './APICalls';
+import { DayToggle } from './DayToggle';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <CrewRepo name={name} role={role} dayRate={dayRate} onCall={onCall} />
     )
   }
+
   useEffect(
     getCrew, []
   )
@@ -33,7 +35,9 @@ function App() {
           <Grid container spacing={1} row>
             <CrewForm addCrew={addCrew} />
             {crewList.map(crewMemberToCrewRepo)}
+            <DayToggle /> 
             <OnCall />
+            {/* {onCallCrew.map(crewList)} */}
           </Grid>
         </header>
       </div>
