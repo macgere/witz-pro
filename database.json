@@ -27,6 +27,34 @@
       "dayRate": "2500",
       "onCall": false,
       "id": 4
+    },
+    {
+      "name": "Davide",
+      "role": "Best Boy",
+      "dayRate": "48495",
+      "onCall": false,
+      "id": 5
+    },
+    {
+      "name": "Jeff",
+      "role": "Actor",
+      "dayRate": "450",
+      "onCall": false,
+      "id": 6
+    },
+    {
+      "name": "Beavis",
+      "role": "Butthead",
+      "dayRate": "6969",
+      "onCall": false,
+      "id": 7
+    },
+    {
+      "name": "Bippy",
+      "role": "Lighting",
+      "dayRate": "47583",
+      "onCall": false,
+      "id": 8
     }
   ]
 }

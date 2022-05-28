@@ -5,8 +5,8 @@ export const OnCall = () => {
 
     return (
 
-            <Grid item xs={12}>
-                <Paper>
+            <Grid item container xs={{ height: '75%' , width: '100%' }}>
+                <Paper variant="outlined">
                     <h3>On Call Crew:</h3>
                 </Paper>
             </Grid>
