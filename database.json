@@ -56,5 +56,13 @@
       "onCall": false,
       "id": 8
     }
+  ],
+  "shootingDay": [
+    {
+      "id": 1,
+      "OnCallCrew": [
+        {"id": 5, "name": "Testy McTestFace", "role": "Director", "dayRate": 50000}
+      ]
+    }
   ]
 }

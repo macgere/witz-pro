@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Paper } from "@mui/material";
 
 export const DayToggle = () => {
 
@@ -22,6 +23,11 @@ export const DayToggle = () => {
             <h2>{day}</h2>
             <button onClick={nextFunc} id="next"> Next </button>
         </Grid>
+        <Grid item container xs={{ height: '75%' , width: '100%' }}>
+                <Paper variant="outlined">
+                    <h3>On Call Crew:</h3>
+                </Paper>
+            </Grid>
         </>
     )
 }
