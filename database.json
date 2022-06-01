@@ -55,14 +55,23 @@
       "dayRate": "47583",
       "onCall": false,
       "id": 8
+    },
+    {
+      "name": "Arthur",
+      "role": "Aardvark",
+      "dayRate": "7800",
+      "onCall": false,
+      "id": 9
     }
+  ],
+  "crewSchedule": [
+    {"id": 1, "shootingDayId": 1, "crewId": 8},
+    {"id": 2, "shootingDayId": 1, "crewId": 9}
   ],
   "shootingDay": [
     {
       "id": 1,
-      "OnCallCrew": [
-        {"id": 5, "name": "Testy McTestFace", "role": "Director", "dayRate": 50000}
-      ]
+      "shootingDate": "January 89th"
     }
   ]
 }

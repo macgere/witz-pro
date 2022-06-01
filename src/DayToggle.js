@@ -1,10 +1,14 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Paper } from "@mui/material";
+import { getCrewById, getShootingDay } from "./APICalls";
+import { OnCallCrew } from "./OnCallCrew";
 
 export const DayToggle = () => {
 
     const [day, setDay] = useState(1)
+    const [onCallCrew, setOnCallCrew] = useState([])
+    const [crewSchedule, setCrewSchedule] = useState([])
 
     const nextFunc = () => {
         setDay(day + 1)
@@ -14,6 +18,27 @@ export const DayToggle = () => {
         if (day > 1) { setDay(day - 1) }
     }
 
+    useEffect(
+        () => {
+            getShootingDay(day).then((data) => {setCrewSchedule(data)})
+        },
+        [day]
+    )
+
+    useEffect(
+        () => {
+            Promise.all(crewSchedule.map(({crewId}) => {
+                return getCrewById(crewId)
+            })).then(setOnCallCrew)
+        }, 
+        [crewSchedule]
+    )
+
+    const crewMemberToOnCallCrew = ({ name, role, dayRate }) => {
+        return (
+          <OnCallCrew name={name} role={role} dayRate={dayRate} />
+        )
+      }
 
     return (
         <>
@@ -26,6 +51,7 @@ export const DayToggle = () => {
         <Grid item container xs={{ height: '75%' , width: '100%' }}>
                 <Paper variant="outlined">
                     <h3>On Call Crew:</h3>
+                    <div>{onCallCrew.map(crewMemberToOnCallCrew)}</div>
                 </Paper>
             </Grid>
         </>

@@ -1,4 +1,4 @@
-const APIurl = "http://localhost:3000"
+const APIurl = "http://localhost:8088"
 
 const dataToPostOptions = (data) => ({
     "method": "POST",
@@ -16,14 +16,17 @@ export const addCrewMember = (crewMember) => {
     .then(response => response.json())
 }
 
-export const getShootingDay = async() => {
-    let shootingDayPayload = null
-    await fetch(`${APIurl}/shootingDay/`)
-    .then(response => response.json().then(data => (shootingDayPayload = data)))
-    return shootingDayPayload
+export const getShootingDay = (id) => {
+    return fetch(`${APIurl}/crewSchedule?shootingDayId=${id}`)
+    .then(response => response.json())
   }
 
 export const addShootingDay = (day) => {
     return fetch(`${APIurl}/shootingDay/${day}`, dataToPostOptions(day))
     .then(response => response.json())
+}
+
+export const getCrewById = (id) => {
+  return fetch(`${APIurl}/crew/${id}`)
+  .then(response => response.json())
 }

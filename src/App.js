@@ -2,7 +2,6 @@ import './App.css';
 import { CrewForm } from './CrewForm'
 import React, { useEffect, useState } from 'react';
 import { CrewRepo } from './CrewRepo';
-import { OnCall } from './OnCall';
 import { Grid } from '@mui/material';
 import { getCrewMembers, addCrewMember } from './APICalls';
 import { DayToggle } from './DayToggle';
@@ -36,8 +35,6 @@ function App() {
             <CrewForm addCrew={addCrew} />
             {crewList.map(crewMemberToCrewRepo)}
             <DayToggle /> 
-            <OnCall />
-            {/* {onCallCrew.map(crewList)} */}
           </Grid>
         </header>
       </div>
