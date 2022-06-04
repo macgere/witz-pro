@@ -1,77 +1,30 @@
 {
   "crew": [
     {
-      "id": 1,
-      "name": "Marc",
-      "role": "AD",
-      "dayRate": 200,
-      "onCall": false
-    },
-    {
-      "name": "Johbn",
-      "role": "Director",
-      "dayRate": "6984981",
-      "id": 2,
-      "onCall": false
-    },
-    {
-      "name": "April",
-      "role": "HBIC",
-      "dayRate": "678",
-      "id": 3,
-      "onCall": false
-    },
-    {
-      "name": "Jason",
-      "role": "Producer",
-      "dayRate": "2500",
+      "name": "Mork",
+      "role": "Spinster",
+      "dayRate": "3500",
       "onCall": false,
-      "id": 4
-    },
-    {
-      "name": "Davide",
-      "role": "Best Boy",
-      "dayRate": "48495",
-      "onCall": false,
-      "id": 5
-    },
-    {
-      "name": "Jeff",
-      "role": "Actor",
-      "dayRate": "450",
-      "onCall": false,
-      "id": 6
-    },
-    {
-      "name": "Beavis",
-      "role": "Butthead",
-      "dayRate": "6969",
-      "onCall": false,
-      "id": 7
-    },
-    {
-      "name": "Bippy",
-      "role": "Lighting",
-      "dayRate": "47583",
-      "onCall": false,
-      "id": 8
-    },
-    {
-      "name": "Arthur",
-      "role": "Aardvark",
-      "dayRate": "7800",
-      "onCall": false,
-      "id": 9
+      "id": 1
     }
   ],
-  "crewSchedule": [
-    {"id": 1, "shootingDayId": 1, "crewId": 8},
-    {"id": 2, "shootingDayId": 1, "crewId": 9}
-  ],
+  "crewSchedule": [],
   "shootingDay": [
     {
       "id": 1,
-      "shootingDate": "January 89th"
+      "shootingDate": "January 89th",
+      "userId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": ""
+    },
+    {
+      "name": "Marc",
+      "email": "mac_gere@yahoo.com",
+      "id": 1
     }
   ]
 }

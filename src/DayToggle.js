@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Paper } from "@mui/material";
-import { getCrewById, getShootingDay } from "./APICalls";
+import { getCrewById, getScheduledCrew } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
 
 export const DayToggle = () => {
@@ -20,7 +20,7 @@ export const DayToggle = () => {
 
     useEffect(
         () => {
-            getShootingDay(day).then((data) => {setCrewSchedule(data)})
+            getScheduledCrew(day).then((data) => {setCrewSchedule(data)})
         },
         [day]
     )
@@ -42,13 +42,14 @@ export const DayToggle = () => {
 
     return (
         <>
-        <Grid item container>
-            <button onClick={prevFunc} id="previous"> Previous </button>
-            <p>Look At Day:</p>
-            <h2>{day}</h2>
-            <button onClick={nextFunc} id="next"> Next </button>
-        </Grid>
-        <Grid item container xs={{ height: '75%' , width: '100%' }}>
+            <Grid item container>
+                <button onClick={prevFunc} id="previous"> Previous </button>
+                <p>Look At Day:</p>
+                <h2>{day}</h2>
+                <input type="date"></input>
+                <button onClick={nextFunc} id="next"> Next </button>
+            </Grid>
+            <Grid item container xs={{ height: '75%', width: '100%' }}>
                 <Paper variant="outlined">
                     <h3>On Call Crew:</h3>
                     <div>{onCallCrew.map(crewMemberToOnCallCrew)}</div>

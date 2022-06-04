@@ -3,13 +3,13 @@ import { CrewForm } from './CrewForm'
 import React, { useEffect, useState } from 'react';
 import { CrewRepo } from './CrewRepo';
 import { Grid } from '@mui/material';
-import { getCrewMembers, addCrewMember } from './APICalls';
+import { getCrewMembers, addCrewMember, deleteCrewMember } from './APICalls';
 import { DayToggle } from './DayToggle';
 
 
 function App() {
-
   const [crewList, setCrewList] = useState([])
+  const [userId, setUserId] = useState(0)
 
   const getCrew = () => {
     getCrewMembers().then(setCrewList)
@@ -17,9 +17,14 @@ function App() {
   const addCrew = (crewMember) => {
     addCrewMember(crewMember).then(getCrew)
   }
-  const crewMemberToCrewRepo = ({ name, role, dayRate, onCall }) => {
+
+  const deleteCrew = (id) => {
+    deleteCrewMember(id).then(getCrew)
+  }
+
+  const crewMemberToCrewRepo = ({ name, role, dayRate, onCall, id, userId }) => {
     return (
-      <CrewRepo name={name} role={role} dayRate={dayRate} onCall={onCall} />
+      <CrewRepo name={name} role={role} dayRate={dayRate} onCall={onCall} id={id} userId={userId} deleteCrew={deleteCrew} />
     )
   }
 

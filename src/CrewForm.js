@@ -2,14 +2,14 @@ import React from "react";
 import { Grid, Paper, TextField, Button} from "@mui/material";
 import { useState } from "react";
 
-export const CrewForm = ({addCrew}) => {
+export const CrewForm = ({addCrew, userId}) => {
     const [name, setName] = useState("")
     const [role, setRole] = useState("")
     const [dayRate, setDayRate] = useState(0)
     const [onCall, setOnCall] = useState(false)
 
     const addCrewObject = () => {
-        const crewObject = {name, role, dayRate, onCall}
+        const crewObject = {name, role, dayRate, onCall, userId}
         addCrew(crewObject)
     }
 
