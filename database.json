@@ -6,12 +6,38 @@
       "dayRate": "3500",
       "onCall": false,
       "id": 1
+    },
+    {
+      "name": "John",
+      "role": "Birthday Boy",
+      "dayRate": "4000",
+      "onCall": false,
+      "id": 2
+    },
+    {
+      "name": "Blimpie",
+      "role": "Craft Services",
+      "dayRate": "1000",
+      "onCall": false,
+      "id": 3
     }
   ],
-  "crewSchedule": [],
+  "crewSchedule": [
+    {
+      "id": 1,
+      "shootingDayId": 1,
+      "crewId": 1
+    },
+    {
+      "id": 2,
+      "shootingDayId": 1,
+      "crewId": 2
+    }
+  ],
   "shootingDay": [
     {
       "id": 1,
+      "dayNumber": 1,
       "shootingDate": "January 89th",
       "userId": 1
     }

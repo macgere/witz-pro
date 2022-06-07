@@ -31,6 +31,11 @@ export const addShootingDay = (day) => {
     .then(response => response.json())
 }
 
+export const getShootingDay = (userId) => {
+  return fetch(`${APIurl}/shootingDay?userId=${userId}`)
+  .then(response => response.json())
+}
+
 export const deleteCrewMember = (id) => {
   return fetch(`${APIurl}/crew/${id}`, 
   {"method": "DELETE"})

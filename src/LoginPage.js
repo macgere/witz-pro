@@ -23,15 +23,15 @@ export const LoginPage = () => {
 
     return (
         <>
-        <h1>Witz Pro - Unit Production Management Suite</h1>
-        <h3>Username:</h3>
-        <input type="text"></input>
-        <h3>User ID:</h3>
-        <input type="number" onChange={(e) => setUserId(e.target.valueAsNumber)}></input>
-        <Link to={linkAddress}>Enter</Link>
-        <br></br>
-        <h3>{errorMessage}</h3>
-        <Link to='/register'>Not Yet a User? Click Here You Idiot</Link>
+            <h1>Witz Pro - Unit Production Management Suite</h1>
+            <h3>Username:</h3>
+            <input type="text"></input>
+            <h3>User ID:</h3>
+            <input type="number" onChange={(e) => setUserId(e.target.valueAsNumber)}></input>
+            <Link to={linkAddress}>Enter</Link>
+            <br></br>
+            <h3>{errorMessage}</h3>
+            <Link to='/register'>Not Yet a User? Click Here You Idiot</Link>
         </>
     )
 }

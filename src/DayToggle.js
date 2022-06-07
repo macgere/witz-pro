@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Paper } from "@mui/material";
-import { getCrewById, getScheduledCrew } from "./APICalls";
+import { getCrewById, getScheduledCrew, getShootingDay, addShootingDay } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
 
 export const DayToggle = () => {
@@ -9,9 +9,14 @@ export const DayToggle = () => {
     const [day, setDay] = useState(1)
     const [onCallCrew, setOnCallCrew] = useState([])
     const [crewSchedule, setCrewSchedule] = useState([])
+    const [date, setDate] = useState(Date)
+    const [displayedDay, setDisplayedDay] = useState({})    
 
     const nextFunc = () => {
         setDay(day + 1)
+        if (displayedDay === null) {
+            addShootingDay(day)
+        }
     }
 
     const prevFunc = () => {
@@ -34,6 +39,13 @@ export const DayToggle = () => {
         [crewSchedule]
     )
 
+    useEffect(
+        () => {
+            getShootingDay(day)
+            .then(data => {setDisplayedDay(data)})
+        }, [day]
+    )
+
     const crewMemberToOnCallCrew = ({ name, role, dayRate }) => {
         return (
           <OnCallCrew name={name} role={role} dayRate={dayRate} />
@@ -45,8 +57,8 @@ export const DayToggle = () => {
             <Grid item container>
                 <button onClick={prevFunc} id="previous"> Previous </button>
                 <p>Look At Day:</p>
-                <h2>{day}</h2>
-                <input type="date"></input>
+                <h2>{displayedDay.id}</h2>
+                <input type="date" onChange={e => setDate(e.target.valueAsNumber)}></input>
                 <button onClick={nextFunc} id="next"> Next </button>
             </Grid>
             <Grid item container xs={{ height: '75%', width: '100%' }}>
