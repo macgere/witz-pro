@@ -5,7 +5,7 @@ import { addScheduledCrew } from "./APICalls";
 
 
 
-export const CrewRepo = ({id, name, role, dayRate, onCall, deleteCrew, userId}) => {
+export const CrewRepo = ({id, name, role, dayRate, onCall, deleteCrew, userId, displayedDay, addScheduledCrewMember}) => {
 
     const [onCallStatus, setOnCallStatus] = useState(onCall)
 
@@ -16,7 +16,14 @@ export const CrewRepo = ({id, name, role, dayRate, onCall, deleteCrew, userId}) 
 
     useEffect(
         () => {
-            addScheduledCrew(id)
+            if (onCallStatus === true) {
+                const newCrewSchedule = {
+                    crewId: id,
+                    shootingDayId: displayedDay.id
+                }
+
+            addScheduledCrewMember(newCrewSchedule)
+        }
         }, [onCallStatus]
     )
 

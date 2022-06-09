@@ -1,13 +1,6 @@
 {
   "crew": [
     {
-      "name": "Mork",
-      "role": "Spinster",
-      "dayRate": "3500",
-      "onCall": false,
-      "id": 1
-    },
-    {
       "name": "John",
       "role": "Birthday Boy",
       "dayRate": "4000",
@@ -15,11 +8,18 @@
       "id": 2
     },
     {
-      "name": "Blimpie",
-      "role": "Craft Services",
-      "dayRate": "1000",
+      "name": "Kimberly",
+      "role": "Talent",
+      "dayRate": "15000",
       "onCall": false,
-      "id": 3
+      "id": 4
+    },
+    {
+      "name": "John",
+      "role": "Pimp",
+      "dayRate": "6969420",
+      "onCall": false,
+      "id": 5
     }
   ],
   "crewSchedule": [
@@ -32,6 +32,51 @@
       "id": 2,
       "shootingDayId": 1,
       "crewId": 2
+    },
+    {
+      "crewId": 5,
+      "shootingDayId": 1,
+      "id": 6
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 1,
+      "id": 7
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 1,
+      "id": 8
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 1,
+      "id": 9
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 1,
+      "id": 10
+    },
+    {
+      "crewId": 4,
+      "shootingDayId": 1,
+      "id": 11
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 1,
+      "id": 12
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 1,
+      "id": 13
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 1,
+      "id": 14
     }
   ],
   "shootingDay": [
@@ -51,6 +96,16 @@
       "name": "Marc",
       "email": "mac_gere@yahoo.com",
       "id": 1
+    },
+    {
+      "name": "Marc ",
+      "email": "fake@fake.com",
+      "id": 2
+    },
+    {
+      "name": "David",
+      "email": "dave@bave.gave",
+      "id": 3
     }
   ]
 }

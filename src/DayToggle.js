@@ -4,13 +4,13 @@ import { Paper } from "@mui/material";
 import { getCrewById, getScheduledCrew, getShootingDay, addShootingDay } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
 
-export const DayToggle = () => {
+export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule}) => {
 
     const [day, setDay] = useState(1)
     const [onCallCrew, setOnCallCrew] = useState([])
-    const [crewSchedule, setCrewSchedule] = useState([])
     const [date, setDate] = useState(Date)
-    const [displayedDay, setDisplayedDay] = useState({})    
+    const [shootingDays, setShootingDays] = useState([])
+      
 
     const nextFunc = () => {
         setDay(day + 1)
@@ -23,12 +23,12 @@ export const DayToggle = () => {
         if (day > 1) { setDay(day - 1) }
     }
 
-    useEffect(
-        () => {
-            getScheduledCrew(day).then((data) => {setCrewSchedule(data)})
-        },
-        [day]
-    )
+    // useEffect(
+    //     () => {
+    //         getScheduledCrew(day).then((data) => {setCrewSchedule(data)})
+    //     },
+    //     [day]
+    // )
 
     useEffect(
         () => {
@@ -42,8 +42,15 @@ export const DayToggle = () => {
     useEffect(
         () => {
             getShootingDay(day)
-            .then(data => {setDisplayedDay(data)})
+            .then(data => {setShootingDays(data)})
         }, [day]
+    )
+
+    useEffect(
+        () => {
+            if (shootingDays[0]) {
+            setDisplayedDay(shootingDays[0])}
+        }, [shootingDays]
     )
 
     const crewMemberToOnCallCrew = ({ name, role, dayRate }) => {
