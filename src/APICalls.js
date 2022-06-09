@@ -11,6 +11,11 @@ export const getCrewMembers = () => {
     .then(response => response.json())
   }
 
+export const getUsers = () => {
+  return fetch(`${APIurl}/users`)
+  .then(response => response.json())
+}
+
 export const addCrewMember = (crewMember) => {
     return fetch(`${APIurl}/crew`, dataToPostOptions(crewMember))
     .then(response => response.json())
@@ -21,8 +26,8 @@ export const getScheduledCrew = (dayId) => {
     .then(response => response.json())
   }
 
-export const addScheduledCrew = (id) => {
-  return fetch(`${APIurl}/crewSchedule?crewId=${id}`, dataToPostOptions(id))
+export const addScheduledCrew = (newCrewSchedule) => {
+  return fetch(`${APIurl}/crewSchedule/`, dataToPostOptions(newCrewSchedule))
   .then(response => response.json())
 }
 
@@ -44,6 +49,11 @@ export const deleteCrewMember = (id) => {
 
 export const getCrewById = (id) => {
   return fetch(`${APIurl}/crew/${id}`)
+  .then(response => response.json())
+}
+
+export const getUserByEmail = (email) => {
+  return fetch(`${APIurl}/users?email=${email}`)
   .then(response => response.json())
 }
 
