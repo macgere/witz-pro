@@ -21,8 +21,8 @@ export const addCrewMember = (crewMember) => {
     .then(response => response.json())
 }
 
-export const getScheduledCrew = (dayId) => {
-    return fetch(`${APIurl}/crewSchedule?shootingDayId=${dayId}`)
+export const getScheduledCrew = () => {
+    return fetch(`${APIurl}/crewSchedule`)
     .then(response => response.json())
   }
 
@@ -32,17 +32,23 @@ export const addScheduledCrew = (newCrewSchedule) => {
 }
 
 export const addShootingDay = (day) => {
-    return fetch(`${APIurl}/shootingDay/${day}`, dataToPostOptions(day))
+    return fetch(`${APIurl}/shootingDay/`, dataToPostOptions(day))
     .then(response => response.json())
 }
 
-export const getShootingDay = (userId) => {
+export const getShootingDays = (userId) => {
   return fetch(`${APIurl}/shootingDay?userId=${userId}`)
   .then(response => response.json())
 }
 
 export const deleteCrewMember = (id) => {
   return fetch(`${APIurl}/crew/${id}`, 
+  {"method": "DELETE"})
+  .then(response => response.json())
+}
+
+export const deleteScheduledCrewMemberFromDay = (id) => {
+  return fetch(`${APIurl}/crewSchedule/${id}`, 
   {"method": "DELETE"})
   .then(response => response.json())
 }

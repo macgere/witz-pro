@@ -13,7 +13,7 @@ export const LoginPage = ({setCurrentlyLoggedInUser}) => {
         () => {
             getUserByEmail(userEmail).then((data) => {
                     if (data.length > 0) {
-                        setCurrentlyLoggedInUser(userEmail)
+                        setCurrentlyLoggedInUser(data[0].id)
                         setLinkAddress('/home')
 
                     } else {

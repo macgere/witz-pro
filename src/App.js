@@ -7,8 +7,10 @@ import Registration from './Registration';
 
 
 function App() {
-  const [currentlyLoggedInUser, setCurrentlyLoggedInUser] = useState('')
+  // const [currentlyLoggedInUser, setCurrentlyLoggedInUser] = useState('')
   
+  const currentlyLoggedInUser = parseInt(localStorage.getItem('userId'))
+  const setCurrentlyLoggedInUser = (userId) => localStorage.setItem('userId', userId)
 
   return (
     <>
@@ -18,8 +20,14 @@ function App() {
             path="/"
             element={<LoginPage setCurrentlyLoggedInUser={setCurrentlyLoggedInUser} />}
           />
-          <Route path="/home" element={<MainView />} />
-          <Route path="/register" element={<Registration />} />
+          <Route 
+          path="/home" 
+          element={<MainView currentlyLoggedInUser={currentlyLoggedInUser}/>} 
+          />
+          <Route 
+          path="/register" 
+          element={<Registration />} 
+          />
         </Routes>
       </BrowserRouter>
     </>
