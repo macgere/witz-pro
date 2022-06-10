@@ -1,21 +1,32 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Paper } from "@mui/material";
-import { getCrewById, getScheduledCrew, getShootingDay, addShootingDay } from "./APICalls";
+import { getCrewById, getScheduledCrew, getShootingDays, addShootingDay } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
 
-export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule}) => {
+export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule, userId, name, role, dayRate, id, deleteCrewSchedule, crewList}) => {
 
     const [day, setDay] = useState(1)
-    const [onCallCrew, setOnCallCrew] = useState([])
     const [date, setDate] = useState(Date)
     const [shootingDays, setShootingDays] = useState([])
+
+    const addNewShootingDay = () => {
+        const userObject = {
+            dayNumber: day + 1,
+            date: "",
+            userId: parseInt(userId)
+        }
+        addShootingDay(userObject)
+        .then(() => getShootingDays(userId))
+        .then(setShootingDays)
+    }
       
 
     const nextFunc = () => {
-        setDay(day + 1)
-        if (displayedDay === null) {
-            addShootingDay(day)
+        if (!shootingDays.find(shootingDay => shootingDay.dayNumber === day + 1)) {
+            addNewShootingDay()
+        } else {
+            setDay(day + 1)
         }
     }
 
@@ -23,39 +34,34 @@ export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule}) => {
         if (day > 1) { setDay(day - 1) }
     }
 
-    // useEffect(
-    //     () => {
-    //         getScheduledCrew(day).then((data) => {setCrewSchedule(data)})
-    //     },
-    //     [day]
-    // )
 
     useEffect(
         () => {
-            Promise.all(crewSchedule.map(({crewId}) => {
-                return getCrewById(crewId)
-            })).then(setOnCallCrew)
-        }, 
-        [crewSchedule]
-    )
-
-    useEffect(
-        () => {
-            getShootingDay(day)
+            getShootingDays(userId)
             .then(data => {setShootingDays(data)})
         }, [day]
     )
 
     useEffect(
         () => {
-            if (shootingDays[0]) {
-            setDisplayedDay(shootingDays[0])}
-        }, [shootingDays]
+            const currentShootingDay = shootingDays.find(shootingDay => shootingDay.dayNumber === day)
+            if (currentShootingDay) {
+            setDisplayedDay(currentShootingDay)}
+        }, [day, shootingDays]
     )
+        const onCallCrew = crewSchedule.filter(scheduleObject => {
+            return scheduleObject.shootingDayId === displayedDay.id
+        }).map(scheduleObject => {
+            return crewList.find(crew => crew.id === scheduleObject.crewId)
+        })
 
-    const crewMemberToOnCallCrew = ({ name, role, dayRate }) => {
+    const crewMemberToOnCallCrew = ({ name, role, dayRate, id }) => {
+        const relevantCrewSchedule = crewSchedule.find(schedule => {
+            return schedule.crewId === id && schedule.shootingDayId === displayedDay.id
+        })
         return (
-          <OnCallCrew name={name} role={role} dayRate={dayRate} />
+            relevantCrewSchedule?
+          <OnCallCrew name={name} role={role} dayRate={dayRate} crewScheduleId={relevantCrewSchedule.id} deleteCrewSchedule={deleteCrewSchedule}/> : <></>
         )
       }
 
@@ -64,7 +70,7 @@ export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule}) => {
             <Grid item container>
                 <button onClick={prevFunc} id="previous"> Previous </button>
                 <p>Look At Day:</p>
-                <h2>{displayedDay.id}</h2>
+                <h2>{day}</h2>
                 <input type="date" onChange={e => setDate(e.target.valueAsNumber)}></input>
                 <button onClick={nextFunc} id="next"> Next </button>
             </Grid>

@@ -15,6 +15,7 @@ export const CrewForm = ({addCrew, userId}) => {
 
     return (
             <Grid item container xs={2}>
+                <h2>Add A New Contractor to your Rolodex:</h2>
                 <Paper>Name:</Paper>
                 <TextField variant="outlined" onChange={(e) => setName(e.target.value)}></TextField>
                 <Paper>Role:</Paper>

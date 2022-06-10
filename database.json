@@ -2,96 +2,127 @@
   "crew": [
     {
       "name": "John",
-      "role": "Birthday Boy",
-      "dayRate": "4000",
-      "onCall": false,
-      "id": 2
-    },
-    {
-      "name": "Kimberly",
-      "role": "Talent",
-      "dayRate": "15000",
-      "onCall": false,
-      "id": 4
-    },
-    {
-      "name": "John",
       "role": "Pimp",
       "dayRate": "6969420",
       "onCall": false,
       "id": 5
+    },
+    {
+      "name": "Bavid",
+      "role": "Birector",
+      "dayRate": "345",
+      "onCall": false,
+      "id": 6
+    },
+    {
+      "name": "Marc",
+      "role": "Clark",
+      "dayRate": "342345345",
+      "onCall": false,
+      "id": 7
     }
   ],
   "crewSchedule": [
     {
-      "id": 1,
-      "shootingDayId": 1,
-      "crewId": 1
-    },
-    {
-      "id": 2,
-      "shootingDayId": 1,
-      "crewId": 2
-    },
-    {
       "crewId": 5,
-      "shootingDayId": 1,
-      "id": 6
-    },
-    {
-      "crewId": 1,
-      "shootingDayId": 1,
+      "shootingDayId": 11,
       "id": 7
     },
     {
-      "crewId": 2,
-      "shootingDayId": 1,
-      "id": 8
-    },
-    {
-      "crewId": 1,
-      "shootingDayId": 1,
-      "id": 9
-    },
-    {
-      "crewId": 2,
-      "shootingDayId": 1,
+      "crewId": 5,
+      "shootingDayId": 12,
       "id": 10
     },
     {
-      "crewId": 4,
-      "shootingDayId": 1,
-      "id": 11
-    },
-    {
-      "crewId": 1,
-      "shootingDayId": 1,
+      "crewId": 5,
+      "shootingDayId": 10,
       "id": 12
     },
     {
-      "crewId": 1,
-      "shootingDayId": 1,
+      "crewId": 6,
+      "shootingDayId": 10,
       "id": 13
     },
     {
-      "crewId": 2,
-      "shootingDayId": 1,
+      "crewId": 7,
+      "shootingDayId": 10,
       "id": 14
+    },
+    {
+      "crewId": 6,
+      "shootingDayId": 8,
+      "id": 15
+    },
+    {
+      "crewId": 7,
+      "shootingDayId": 8,
+      "id": 16
+    },
+    {
+      "crewId": 7,
+      "shootingDayId": 11,
+      "id": 18
+    },
+    {
+      "crewId": 6,
+      "shootingDayId": 12,
+      "id": 20
+    },
+    {
+      "crewId": 7,
+      "shootingDayId": 12,
+      "id": 21
+    },
+    {
+      "crewId": 5,
+      "shootingDayId": 13,
+      "id": 22
+    },
+    {
+      "crewId": 6,
+      "shootingDayId": 13,
+      "id": 23
     }
   ],
   "shootingDay": [
+    {
+      "id": 10,
+      "dayNumber": 1,
+      "shootingDate": "",
+      "userId": 2
+    },
     {
       "id": 1,
       "dayNumber": 1,
       "shootingDate": "January 89th",
       "userId": 1
+    },
+    {
+      "dayNumber": 2,
+      "date": "",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "dayNumber": 3,
+      "date": "",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "dayNumber": 4,
+      "date": "",
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "dayNumber": 5,
+      "date": "",
+      "userId": 2,
+      "id": 13
     }
   ],
   "users": [
-    {
-      "id": 0,
-      "name": ""
-    },
     {
       "name": "Marc",
       "email": "mac_gere@yahoo.com",
