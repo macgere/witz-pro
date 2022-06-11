@@ -5,7 +5,7 @@ import { getCrewById, getScheduledCrew, getShootingDays, addShootingDay, updateS
 import { OnCallCrew } from "./OnCallCrew";
 import { ProjectBudgetTicker } from "./ProjectBudgetTicker";
 
-export const DayToggle = ({dayExpenditure, setDayExpenditure, displayedDay, setDisplayedDay, crewSchedule, userId, name, role, dayRate, id, deleteCrewSchedule, crewList}) => {
+export const DayToggle = ({projExpenditure, displayedDay, setDisplayedDay, crewSchedule, userId, name, role, dayRate, id, deleteCrewSchedule, crewList}) => {
 
     const [day, setDay] = useState(1)
     const [date, setDate] = useState(new Date().toISOString().slice(0,10))
@@ -88,7 +88,7 @@ export const DayToggle = ({dayExpenditure, setDayExpenditure, displayedDay, setD
 
     return (
         <>
-            <ProjectBudgetTicker dayExpenditure={dayExpenditure}/> 
+            <ProjectBudgetTicker projExpenditure={projExpenditure}/> 
             <Grid item container>
                 <button onClick={prevFunc} id="previous"> Previous Day </button>
                 <Grid item>

@@ -1,10 +1,9 @@
 import React from "react";
 
-export const ProjectBudgetTicker = ({dayExpenditure}) => {
+export const ProjectBudgetTicker = ({projExpenditure}) => {
     return (
         <>
-        <h2>Total Expenditure for This Project:</h2>
-        <h2>{dayExpenditure}</h2>
+        <h2>Total Expenditure for This Project: ${projExpenditure}.00</h2>
         </>
     )
 }

@@ -5,14 +5,13 @@ import { addScheduledCrew } from "./APICalls";
 
 
 
-export const CrewRepo = ({dayExpenditure, setDayExpenditure, id, name, role, dayRate, onCall, deleteCrew, userId, displayedDay, addScheduledCrewMember}) => {
+export const CrewRepo = ({ id, name, role, dayRate, onCall, deleteCrew, userId, displayedDay, addScheduledCrewMember}) => {
 
     const [onCallStatus, setOnCallStatus] = useState(onCall)
 
     const scheduleCrewMember = () => {
         if (onCallStatus === false) { 
             setOnCallStatus(true)
-            setDayExpenditure(dayExpenditure + parseInt(dayRate))
         }
         if (onCallStatus === true) { setOnCallStatus(false)}
     }
