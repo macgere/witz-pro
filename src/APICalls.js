@@ -12,6 +12,16 @@ const dataToPutOptions = (data) => ({
   "headers": {"Content-Type": "application/json"}
 })
 
+export const updateProjectBudget = (budgetUpdate) => {
+    return fetch(`${APIurl}/budgets/${budgetUpdate.id}`, dataToPostOptions(budgetUpdate))
+    .then(response => response.json())
+}
+
+export const getBudgetsByUserId = (userId) => {
+  return fetch(`${APIurl}/budgets/${userId}`)
+  .then(response => response.json())
+}
+
 export const updateShootingDay = (updatedShootingDay) => {
     return fetch(`${APIurl}/shootingDay/${updatedShootingDay.id}`, dataToPutOptions(updatedShootingDay))
     .then(response => response.json())

@@ -20,9 +20,32 @@
       "dayRate": "350",
       "onCall": false,
       "id": 3
+    },
+    {
+      "name": "Peter",
+      "role": "Taxes",
+      "dayRate": "654",
+      "onCall": false,
+      "id": 4
     }
   ],
-  "crewSchedule": [],
+  "crewSchedule": [
+    {
+      "crewId": 3,
+      "shootingDayId": 2,
+      "id": 3
+    },
+    {
+      "crewId": 4,
+      "shootingDayId": 2,
+      "id": 4
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 2,
+      "id": 7
+    }
+  ],
   "shootingDay": [
     {
       "dayNumber": 2,
@@ -32,7 +55,7 @@
     },
     {
       "dayNumber": 3,
-      "date": "2022-06-26",
+      "date": "2022-05-31",
       "userId": 2,
       "id": 2
     },
@@ -44,9 +67,15 @@
     },
     {
       "dayNumber": 5,
-      "date": "2022-05-24",
+      "date": "2022-06-29",
       "userId": 2,
       "id": 4
+    },
+    {
+      "dayNumber": 6,
+      "date": "2022-06-30",
+      "userId": 2,
+      "id": 5
     }
   ],
   "users": [
