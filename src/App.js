@@ -22,7 +22,7 @@ function App() {
           />
           <Route 
           path="/home" 
-          element={<MainView currentlyLoggedInUser={currentlyLoggedInUser}/>} 
+          element={<MainView currentlyLoggedInUser={currentlyLoggedInUser} setCurrentlyLoggedInUser={setCurrentlyLoggedInUser}/>} 
           />
           <Route 
           path="/register" 

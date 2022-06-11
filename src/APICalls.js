@@ -6,6 +6,17 @@ const dataToPostOptions = (data) => ({
     "headers": {"Content-Type": "application/json"}
 })
 
+const dataToPutOptions = (data) => ({
+  "method": "PUT",
+  "body": JSON.stringify(data),
+  "headers": {"Content-Type": "application/json"}
+})
+
+export const updateShootingDay = (updatedShootingDay) => {
+    return fetch(`${APIurl}/shootingDay/${updatedShootingDay.id}`, dataToPutOptions(updatedShootingDay))
+    .then(response => response.json())
+}
+
 export const getCrewMembers = () => {
     return fetch(`${APIurl}/crew`)
     .then(response => response.json())

@@ -1,13 +1,14 @@
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Paper } from "@mui/material";
-import { getCrewById, getScheduledCrew, getShootingDays, addShootingDay } from "./APICalls";
+import { getCrewById, getScheduledCrew, getShootingDays, addShootingDay, updateShootingDay } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
+import { ProjectBudgetTicker } from "./ProjectBudgetTicker";
 
-export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule, userId, name, role, dayRate, id, deleteCrewSchedule, crewList}) => {
+export const DayToggle = ({dayExpenditure, setDayExpenditure, displayedDay, setDisplayedDay, crewSchedule, userId, name, role, dayRate, id, deleteCrewSchedule, crewList}) => {
 
     const [day, setDay] = useState(1)
-    const [date, setDate] = useState(Date)
+    const [date, setDate] = useState(new Date().toISOString().slice(0,10))
     const [shootingDays, setShootingDays] = useState([])
 
     const addNewShootingDay = () => {
@@ -20,7 +21,8 @@ export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule, userId, 
         .then(() => getShootingDays(userId))
         .then(setShootingDays)
     }
-      
+
+
 
     const nextFunc = () => {
         if (!shootingDays.find(shootingDay => shootingDay.dayNumber === day + 1)) {
@@ -44,11 +46,19 @@ export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule, userId, 
 
     useEffect(
         () => {
-            const currentShootingDay = shootingDays.find(shootingDay => shootingDay.dayNumber === day)
+            getShootingDays(userId)
+            .then(data => {setShootingDays(data)})
+        }, []
+    )
+
+    useEffect(
+        () => {
+            const currentShootingDay = shootingDays.find(shootingDay => shootingDay.dayNumber - 1 === day )
             if (currentShootingDay) {
             setDisplayedDay(currentShootingDay)}
         }, [day, shootingDays]
     )
+
         const onCallCrew = crewSchedule.filter(scheduleObject => {
             return scheduleObject.shootingDayId === displayedDay.id
         }).map(scheduleObject => {
@@ -65,14 +75,31 @@ export const DayToggle = ({displayedDay, setDisplayedDay, crewSchedule, userId, 
         )
       }
 
+      const changeDate = (e) => {
+            setDate(e.target.value)
+      }
+
+      const putDate = () => {
+          const updatedShootingDay = {...displayedDay, date: date}
+          updateShootingDay(updatedShootingDay)
+          .then(() => getShootingDays(userId))
+          .then(setShootingDays)
+      }
+
     return (
         <>
+            <ProjectBudgetTicker dayExpenditure={dayExpenditure}/> 
             <Grid item container>
-                <button onClick={prevFunc} id="previous"> Previous </button>
-                <p>Look At Day:</p>
-                <h2>{day}</h2>
-                <input type="date" onChange={e => setDate(e.target.valueAsNumber)}></input>
-                <button onClick={nextFunc} id="next"> Next </button>
+                <button onClick={prevFunc} id="previous"> Previous Day </button>
+                <Grid item>
+                    <p>Look At Day:</p>
+                    <h2>{day}</h2>
+                    <p>on the date:</p>
+                    <p>{displayedDay.date}</p>
+                </Grid>
+                <input type="date" value={date} onChange={changeDate}></input>
+                <Button onClick={putDate}>Update Date</Button>
+                <button onClick={nextFunc} id="next"> Next Day</button>
             </Grid>
             <Grid item container xs={{ height: '75%', width: '100%' }}>
                 <Paper variant="outlined">
