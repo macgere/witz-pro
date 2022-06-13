@@ -1,0 +1,12 @@
+.mainView {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainView > * {
+    flex: 1;
+}
+
+.logOutBtn {
+    justify-content: flex-end;
+}

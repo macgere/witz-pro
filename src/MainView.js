@@ -12,13 +12,29 @@ export const MainView = ({currentlyLoggedInUser, setCurrentlyLoggedInUser}) => {
     const [crewList, setCrewList] = useState([])
     const [displayedDay, setDisplayedDay] = useState({}) 
     const [crewSchedule, setCrewSchedule] = useState([])
-    const [projExpenditure, setProjExpenditure] = useState(0)
+    // const [projExpenditure, setProjExpenditure] = useState(0)
 
-    const totalProjExpenditure = crewSchedule.reduce((acc, curr) => {
-        const crewMember = crewList.find(crew => (crew.id === curr.crewId))
-        if (crewMember) return acc + parseInt(crewMember.dayRate)
-        return acc
-    }, 0)
+    const crewScheduleToCrewMember = (crewScheduleObj) => {
+        return crewList.find(crew => (crewScheduleObj.crewId === crew.id))
+    }
+
+    const crewMemberToDayRate = ({dayRate}) => {
+        return parseInt(dayRate)
+    }
+
+    const numberAndNumberToSum = (a, b) => {
+        return a + b
+    } 
+
+    const crewSchedulesToTotalExpense = (crewScheduleArray) => {
+        return crewScheduleArray
+        .map(crewScheduleToCrewMember)
+        .map(crewMemberToDayRate)
+        .reduce(numberAndNumberToSum, 0)
+    }
+
+    const dayExpenditure = crewSchedulesToTotalExpense(crewSchedule.filter(scheduledDay => scheduledDay.shootingDayId === displayedDay.id))
+    const totalProjExpenditure = crewSchedulesToTotalExpense(crewSchedule)
 
     const addScheduledCrewMember = (newCrewSchedule) => {
         addScheduledCrew(newCrewSchedule).then(() => {
@@ -59,7 +75,7 @@ export const MainView = ({currentlyLoggedInUser, setCurrentlyLoggedInUser}) => {
 
     const crewMemberToCrewRepo = ({ name, role, dayRate, onCall, id, userId }) => {
         return (
-            <CrewRepo projExpenditure={projExpenditure} setProjExpenditure={setProjExpenditure} name={name} role={role} dayRate={dayRate} onCall={onCall} id={id} userId={userId} deleteCrew={deleteCrew} displayedDay={displayedDay} addScheduledCrewMember={addScheduledCrewMember}/>
+            <CrewRepo name={name} role={role} dayRate={dayRate} onCall={onCall} id={id} userId={userId} deleteCrew={deleteCrew} displayedDay={displayedDay} addScheduledCrewMember={addScheduledCrewMember}/>
         )
     }
 
@@ -78,10 +94,12 @@ export const MainView = ({currentlyLoggedInUser, setCurrentlyLoggedInUser}) => {
         <>
             <div className="App">
                 <header className="App-header">
-                    <Grid container spacing={1} row>
+                    <Grid container spacing={1} row className='mainView'>
                         <CrewForm addCrew={addCrew} />
+                        <div className='crewRepo'>
                         {crewList.map(crewMemberToCrewRepo)}
-                        <DayToggle projExpenditure={totalProjExpenditure} setProjExpenditure={setProjExpenditure} displayedDay={displayedDay} userId={currentlyLoggedInUser} setDisplayedDay={setDisplayedDay} crewList={crewList} crewSchedule={crewSchedule} deleteCrewSchedule={deleteCrewSchedule}/>
+                        </div>
+                        <DayToggle dayExpenditure={dayExpenditure} projExpenditure={totalProjExpenditure} displayedDay={displayedDay} userId={currentlyLoggedInUser} setDisplayedDay={setDisplayedDay} crewList={crewList} crewSchedule={crewSchedule} deleteCrewSchedule={deleteCrewSchedule}/>
                         <LogOutButton setCurrentlyLoggedInUser={setCurrentlyLoggedInUser}/> 
                     </Grid>
                 </header>

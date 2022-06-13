@@ -30,7 +30,7 @@ export const CrewRepo = ({ id, name, role, dayRate, onCall, deleteCrew, userId, 
     )
 
     return (
-            <Grid item xs={2}>
+            <Grid item xs={6}>
                 <Paper>
                 <p>{name}</p>
                 <p>{role}</p>

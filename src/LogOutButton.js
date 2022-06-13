@@ -14,7 +14,9 @@ export const LogOutButton = ({setCurrentlyLoggedInUser}) => {
     }
 
     return (
+        <div className="logOutBtn">
         <Button onClick={logOut}>Log Out</Button>
+        </div>
     )
 }
 
