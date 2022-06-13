@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "name": "Luke",
-      "role": "Prophet",
-      "dayRate": "500",
-      "onCall": false,
-      "id": 2
-    },
-    {
       "name": "Matthew",
       "role": "Fisher",
       "dayRate": "350",
@@ -41,9 +34,9 @@
       "id": 4
     },
     {
-      "crewId": 2,
-      "shootingDayId": 2,
-      "id": 7
+      "crewId": 3,
+      "shootingDayId": 3,
+      "id": 5
     }
   ],
   "shootingDay": [
@@ -76,6 +69,42 @@
       "date": "2022-06-30",
       "userId": 2,
       "id": 5
+    },
+    {
+      "dayNumber": 7,
+      "date": "2022-08-24",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "dayNumber": 8,
+      "date": "",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "dayNumber": 9,
+      "date": "",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "dayNumber": 2,
+      "date": "2022-06-23",
+      "userId": 4,
+      "id": 9
+    },
+    {
+      "dayNumber": 3,
+      "date": "2022-06-24",
+      "userId": 4,
+      "id": 10
+    },
+    {
+      "dayNumber": 4,
+      "date": "2022-06-22",
+      "userId": 4,
+      "id": 11
     }
   ],
   "users": [
@@ -93,6 +122,11 @@
       "name": "David",
       "email": "dave@bave.gave",
       "id": 3
+    },
+    {
+      "name": "Styling Test",
+      "email": "styling@test.com",
+      "id": 4
     }
   ]
 }
