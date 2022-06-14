@@ -1,7 +1,5 @@
-import { Button, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { Paper } from "@mui/material";
-import { getCrewById, getScheduledCrew, getShootingDays, addShootingDay, updateShootingDay } from "./APICalls";
+import { getShootingDays, addShootingDay, updateShootingDay } from "./APICalls";
 import { OnCallCrew } from "./OnCallCrew";
 import { ProjectBudgetTicker } from "./ProjectBudgetTicker";
 
@@ -88,25 +86,24 @@ export const DayToggle = ({dayExpenditure, projExpenditure, displayedDay, setDis
 
     return (
         <>
-            <ProjectBudgetTicker projExpenditure={projExpenditure} dayExpenditure={dayExpenditure}/> 
-            <Grid item container>
+            <div className="onCallCrewContainer">
+                <h3>On Call Crew:</h3>
+                <div>{onCallCrew.map(crewMemberToOnCallCrew)}</div>
+            </div>
+            <div className="dayToggleContainer">
                 <button onClick={prevFunc} id="previous"> Previous Day </button>
-                <Grid item>
+                <div className="dayToggleMessage">
                     <p>Look At Day:</p>
-                    <h2>{day}</h2>
+                    <h3>{day}</h3>
                     <p>on the date:</p>
                     <p>{displayedDay.date}</p>
-                </Grid>
+                </div>
+                <button onClick={putDate}>Update Date</button>
                 <input type="date" value={date} onChange={changeDate}></input>
-                <Button onClick={putDate}>Update Date</Button>
                 <button onClick={nextFunc} id="next"> Next Day</button>
-            </Grid>
-            <Grid item container xs={{ height: '75%', width: '100%' }}>
-                <Paper variant="outlined">
-                    <h3>On Call Crew:</h3>
-                    <div>{onCallCrew.map(crewMemberToOnCallCrew)}</div>
-                </Paper>
-            </Grid>
+                <ProjectBudgetTicker projExpenditure={projExpenditure} dayExpenditure={dayExpenditure} />
+            </div>
+
         </>
     )
 }
