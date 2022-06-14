@@ -1,12 +1,137 @@
 .mainView {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-.mainView > * {
-    flex: 1;
-}
 
 .logOutBtn {
     justify-content: flex-end;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dayToggleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.dayToggleContainer button {
+    height: 5px;
+}
+
+.dayToggleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d5a7f1;
+}
+
+.dayToggleContainer > * {
+    flex: 1;
+    margin: 1%;
+    padding: 1%;
+}
+
+.onCallCrewContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #d5a7f1;
+    align-items: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 75%;
+    height: 84vh;
+    overflow-y: scroll;
+}
+
+.onCallCrewCard {
+    flex: 1;
+    flex-direction: row;
+    background-color: #a783e0b1;
+    border-radius: 5px;
+    margin: 1%;
+    width: 95%;
+    padding: 1%;
+}
+
+.onCallCrewCard > p {
+    width: 50%;
+}
+
+.onCallCrewContainer > * {
+    flex: 1;
+}
+
+.onCallCrewContainer h3  {
+    display: flex;
+    justify-content: center;
+}
+
+
+.crewRepoContainer {
+    display: flex;
+    background-color: #d5a7f1;
+    width: 15vw;
+    padding: 1%;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+
+.crewRepoCard {
+    flex: 1;
+    background-color: #E363F5;
+    margin: 2%;
+    box-shadow: 5px 3px 5px rgba(122, 130, 130, 0.374);
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.crewRepoCard > * {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.crewFormContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #d5a7f1;
+
+    ;
+    margin-right: 1%;
+}
+
+.crewFormContainer > * {
+    margin: 3%;
+    padding: 3%;
+}
+
+.crewFormContainer > p {
+    display: flex;
+    margin: 0; 
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.crewFormContainer > input {
+    margin: 1%;
+    padding: 1%;
+}
+
+.crewRepo h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }

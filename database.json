@@ -1,42 +1,197 @@
 {
   "crew": [
     {
-      "name": "John",
-      "role": "Baptist",
-      "dayRate": "400",
+      "name": "Will Lee",
+      "role": "Director",
+      "dayRate": "2345",
       "onCall": false,
       "id": 1
     },
     {
-      "name": "Matthew",
-      "role": "Fisher",
-      "dayRate": "350",
+      "name": "Jack Warne",
+      "role": "Producer",
+      "dayRate": "1750",
+      "onCall": false,
+      "id": 2
+    },
+    {
+      "name": "Harrison Luna",
+      "role": "AD",
+      "dayRate": "1865",
       "onCall": false,
       "id": 3
     },
     {
-      "name": "Peter",
-      "role": "Taxes",
-      "dayRate": "654",
+      "name": "Cooper Thomas",
+      "role": "AD",
+      "dayRate": "780",
       "onCall": false,
       "id": 4
+    },
+    {
+      "name": "Saxby Wiles",
+      "role": "Key Grip",
+      "dayRate": "2300",
+      "onCall": false,
+      "id": 5
+    },
+    {
+      "name": "Andrew Wright",
+      "role": "Light Rigger",
+      "dayRate": "4500",
+      "onCall": false,
+      "id": 6
+    },
+    {
+      "name": "Lily Wheeler",
+      "role": "Exec Producer",
+      "dayRate": "6550",
+      "onCall": false,
+      "id": 7
+    },
+    {
+      "name": "David Fincher",
+      "role": "Second Unit Director",
+      "dayRate": "4300",
+      "onCall": false,
+      "id": 8
+    },
+    {
+      "name": "Miles Jupp",
+      "role": "Book Master",
+      "dayRate": "1750",
+      "onCall": false,
+      "id": 9
+    },
+    {
+      "name": "Leonardo Kuntz",
+      "role": "Prop Master",
+      "dayRate": "1750",
+      "onCall": false,
+      "id": 10
+    },
+    {
+      "name": "Alec Baldwin",
+      "role": "Gun Safety",
+      "dayRate": "2000",
+      "onCall": false,
+      "id": 11
+    },
+    {
+      "name": "Karl Jenkins",
+      "role": "Boom ",
+      "dayRate": "2000",
+      "onCall": false,
+      "id": 12
+    },
+    {
+      "name": "Alan Smithee",
+      "role": "On-Site Audio Mix",
+      "dayRate": "2000",
+      "onCall": false,
+      "id": 13
     }
   ],
   "crewSchedule": [
     {
+      "crewId": 1,
+      "shootingDayId": 3,
+      "id": 1
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 3,
+      "id": 2
+    },
+    {
+      "crewId": 4,
+      "shootingDayId": 3,
+      "id": 4
+    },
+    {
+      "crewId": 8,
+      "shootingDayId": 3,
+      "id": 5
+    },
+    {
+      "crewId": 8,
+      "shootingDayId": 1,
+      "id": 6
+    },
+    {
+      "crewId": 10,
+      "shootingDayId": 1,
+      "id": 7
+    },
+    {
+      "crewId": 12,
+      "shootingDayId": 1,
+      "id": 8
+    },
+    {
+      "crewId": 13,
+      "shootingDayId": 1,
+      "id": 9
+    },
+    {
+      "crewId": 6,
+      "shootingDayId": 1,
+      "id": 10
+    },
+    {
+      "crewId": 7,
+      "shootingDayId": 1,
+      "id": 11
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 2,
+      "id": 12
+    },
+    {
+      "crewId": 2,
+      "shootingDayId": 2,
+      "id": 13
+    },
+    {
       "crewId": 3,
       "shootingDayId": 2,
-      "id": 3
+      "id": 14
     },
     {
       "crewId": 4,
       "shootingDayId": 2,
-      "id": 4
+      "id": 15
+    },
+    {
+      "crewId": 5,
+      "shootingDayId": 2,
+      "id": 16
+    },
+    {
+      "crewId": 9,
+      "shootingDayId": 4,
+      "id": 17
+    },
+    {
+      "crewId": 10,
+      "shootingDayId": 4,
+      "id": 18
+    },
+    {
+      "crewId": 11,
+      "shootingDayId": 4,
+      "id": 19
     },
     {
       "crewId": 3,
-      "shootingDayId": 3,
-      "id": 5
+      "shootingDayId": 4,
+      "id": 20
+    },
+    {
+      "crewId": 1,
+      "shootingDayId": 4,
+      "id": 21
     }
   ],
   "shootingDay": [
@@ -48,13 +203,13 @@
     },
     {
       "dayNumber": 3,
-      "date": "2022-05-31",
+      "date": "2022-06-14",
       "userId": 2,
       "id": 2
     },
     {
       "dayNumber": 4,
-      "date": "2022-05-18",
+      "date": "2022-06-22",
       "userId": 2,
       "id": 3
     },
@@ -105,6 +260,48 @@
       "date": "2022-06-22",
       "userId": 4,
       "id": 11
+    },
+    {
+      "dayNumber": 5,
+      "date": "2022-06-13",
+      "userId": 4,
+      "id": 12
+    },
+    {
+      "dayNumber": 2,
+      "date": "",
+      "userId": 3,
+      "id": 13
+    },
+    {
+      "dayNumber": 3,
+      "date": "",
+      "userId": 3,
+      "id": 14
+    },
+    {
+      "dayNumber": 4,
+      "date": "",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "dayNumber": 5,
+      "date": "",
+      "userId": 3,
+      "id": 16
+    },
+    {
+      "dayNumber": 6,
+      "date": "",
+      "userId": 3,
+      "id": 17
+    },
+    {
+      "dayNumber": 7,
+      "date": "",
+      "userId": 3,
+      "id": 18
     }
   ],
   "users": [

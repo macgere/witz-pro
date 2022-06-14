@@ -2,8 +2,7 @@ import './App.css';
 import { CrewForm } from './CrewForm'
 import React, { useEffect, useState } from 'react';
 import { CrewRepo } from './CrewRepo';
-import { Grid } from '@mui/material';
-import { updateProjectBudget, getCrewMembers, addCrewMember, deleteCrewMember, addScheduledCrew, getScheduledCrew, deleteScheduledCrewMemberFromDay, getBudgetsByUserId } from './APICalls';
+import { getCrewMembers, addCrewMember, deleteCrewMember, addScheduledCrew, getScheduledCrew, deleteScheduledCrewMemberFromDay } from './APICalls';
 import { DayToggle } from './DayToggle';
 import LogOutButton from './LogOutButton';
 
@@ -94,14 +93,17 @@ export const MainView = ({currentlyLoggedInUser, setCurrentlyLoggedInUser}) => {
         <>
             <div className="App">
                 <header className="App-header">
-                    <Grid container spacing={1} row className='mainView'>
+                    <div className='mainView'>
                         <CrewForm addCrew={addCrew} />
-                        <div className='crewRepo'>
-                        {crewList.map(crewMemberToCrewRepo)}
+                        <div className='crewRepoContainer'>
+                            <div className='crewRepo'>
+                            <h3>Rolodex:</h3>
+                                {crewList.map(crewMemberToCrewRepo)}
+                            </div>
                         </div>
-                        <DayToggle dayExpenditure={dayExpenditure} projExpenditure={totalProjExpenditure} displayedDay={displayedDay} userId={currentlyLoggedInUser} setDisplayedDay={setDisplayedDay} crewList={crewList} crewSchedule={crewSchedule} deleteCrewSchedule={deleteCrewSchedule}/>
-                        <LogOutButton setCurrentlyLoggedInUser={setCurrentlyLoggedInUser}/> 
-                    </Grid>
+                        <DayToggle dayExpenditure={dayExpenditure} projExpenditure={totalProjExpenditure} displayedDay={displayedDay} userId={currentlyLoggedInUser} setDisplayedDay={setDisplayedDay} crewList={crewList} crewSchedule={crewSchedule} deleteCrewSchedule={deleteCrewSchedule} />
+                        <LogOutButton setCurrentlyLoggedInUser={setCurrentlyLoggedInUser} />
+                    </div>
                 </header>
             </div>
         </>

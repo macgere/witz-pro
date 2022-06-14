@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,7 @@ export const LogOutButton = ({setCurrentlyLoggedInUser}) => {
 
     return (
         <div className="logOutBtn">
-        <Button onClick={logOut}>Log Out</Button>
+        <button onClick={logOut}>Log Out</button>
         </div>
     )
 }
