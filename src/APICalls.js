@@ -1,4 +1,4 @@
-const APIurl = "http://localhost:8088"
+const APIurl = "http://localhost:3000"
 
 const dataToPostOptions = (data) => ({
     "method": "POST",
