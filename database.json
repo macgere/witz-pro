@@ -1,13 +1,6 @@
 {
   "crew": [
     {
-      "name": "Will Lee",
-      "role": "Director",
-      "dayRate": "2345",
-      "onCall": false,
-      "id": 1
-    },
-    {
       "name": "Jack Warne",
       "role": "Producer",
       "dayRate": "1750",
@@ -90,14 +83,16 @@
       "dayRate": "2000",
       "onCall": false,
       "id": 13
+    },
+    {
+      "name": "Kimberly Dolendo",
+      "role": "Executive Producer",
+      "dayRate": "3450",
+      "onCall": false,
+      "id": 14
     }
   ],
   "crewSchedule": [
-    {
-      "crewId": 1,
-      "shootingDayId": 3,
-      "id": 1
-    },
     {
       "crewId": 2,
       "shootingDayId": 3,
@@ -144,21 +139,6 @@
       "id": 11
     },
     {
-      "crewId": 1,
-      "shootingDayId": 2,
-      "id": 12
-    },
-    {
-      "crewId": 2,
-      "shootingDayId": 2,
-      "id": 13
-    },
-    {
-      "crewId": 3,
-      "shootingDayId": 2,
-      "id": 14
-    },
-    {
       "crewId": 4,
       "shootingDayId": 2,
       "id": 15
@@ -189,9 +169,19 @@
       "id": 20
     },
     {
-      "crewId": 1,
+      "crewId": 14,
       "shootingDayId": 4,
-      "id": 21
+      "id": 22
+    },
+    {
+      "crewId": 3,
+      "shootingDayId": 2,
+      "id": 23
+    },
+    {
+      "crewId": 8,
+      "shootingDayId": 2,
+      "id": 24
     }
   ],
   "shootingDay": [
