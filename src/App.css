@@ -3,13 +3,26 @@
     flex-direction: row;
 }
 
+button {
+    flex: 1;
+    background-color: #e1c4f3;
+    border-radius: 5px;
+    width: 80%;
+    height: 3em;
+}
+
+input {
+    border-radius: 3px;
+}
 
 .logOutBtn {
-    justify-content: flex-end;
+   align-items:center;
+    margin: 1%;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 
 h3 {
@@ -42,6 +55,7 @@ h3 {
     display: flex;
     flex-direction: column;
     background-color: #d5a7f1;
+    box-shadow: inset 10px 10px 10px rgba(122, 130, 130, 0.374);
     align-items: center;
     margin-left: 1%;
     margin-right: 1%;
@@ -54,14 +68,24 @@ h3 {
     flex: 1;
     flex-direction: row;
     background-color: #a783e0b1;
+    box-shadow: 5px 3px 5px rgba(122, 130, 130, 0.374);
     border-radius: 5px;
     margin: 1%;
-    width: 95%;
+    width: 40vw;
     padding: 1%;
 }
 
+.onCallCrewCard > * {
+    align-items: center;
+    justify-content:flex-start;
+}
+
 .onCallCrewCard > p {
-    width: 50%;
+    width: 100%;
+}
+
+.onCallCrewCard > button {
+    width: 40vw;
 }
 
 .onCallCrewContainer > * {
@@ -111,7 +135,14 @@ h3 {
 
 .crewFormContainer > * {
     margin: 3%;
+    margin-right: 1%;
     padding: 3%;
+    padding-right: 1%;
+
+}
+
+.crewFormContainer > button {
+    width: 94%;
 }
 
 .crewFormContainer > p {

@@ -19,7 +19,7 @@ export const CrewForm = ({addCrew, userId}) => {
                 <input type="text" onChange={(e) => setName(e.target.value)}></input>
                 <p>Role:</p>
                 <input type="text" onChange={(e) => setRole(e.target.value)}></input>
-                <p>DayRate:</p>
+                <p>Day Rate in Dollars:</p>
                 <input type="number" onChange={(e) => setDayRate(e.target.value)}></input>
                 <button onClick={addCrewObject}>Submit</button>
             </div>

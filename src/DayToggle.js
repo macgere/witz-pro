@@ -93,9 +93,9 @@ export const DayToggle = ({dayExpenditure, projExpenditure, displayedDay, setDis
             <div className="dayToggleContainer">
                 <button onClick={prevFunc} id="previous"> Previous Day </button>
                 <div className="dayToggleMessage">
-                    <p>Look At Day:</p>
+                    <p>Currently Viewing Day:</p>
                     <h3>{day}</h3>
-                    <p>on the date:</p>
+                    <p>Scheduled for:</p>
                     <p>{displayedDay.date}</p>
                 </div>
                 <button onClick={putDate}>Update Date</button>

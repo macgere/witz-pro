@@ -31,7 +31,7 @@ export const CrewRepo = ({ id, name, role, dayRate, onCall, deleteCrew, userId, 
             <div className="crewRepoCard">
                 <p>{name}</p>
                 <p>{role}</p>
-                <p>{dayRate}</p>
+                <p>${dayRate}.00</p>
                 <button onClick={scheduleCrewMember}>Schedule Me</button>
                 <button onClick={() => { deleteCrew(id) }}>X</button>
             </div>
